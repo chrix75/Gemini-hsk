@@ -105,7 +105,7 @@ buildBestTree ((k, v):xs) = insertMarkTree xs (M.singleton k v)
 
 -- | Computes the average of each item of a tree.
 computeAverage :: M.Map [a] Double -> Double
-computeAverage m = M.fold (\v a -> v + a) 0 m / l
+computeAverage m = if l == 0 then 0 else M.fold (\v a -> v + a) 0 m / l
         where l = fromIntegral (length (M.keys m))
         
         

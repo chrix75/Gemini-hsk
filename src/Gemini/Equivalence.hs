@@ -14,7 +14,7 @@ In the documentation below, you'll find reference to Cursor data. Take a look at
 for more details.
 
 -}
-module Gemini.Equivalence where
+module Gemini.Equivalence (findEquivalence, (<->), buildEquivalences) where
 
 import Gemini.Types (Cursor(..), Equivalence(..))
 
@@ -39,6 +39,15 @@ findEquivalence e s = case validateSearch e s of
     where correctPrevious x = checkPrefixes (previous s) (prefix x)
           correctFollowers x =  checkSuffixes (followers s) (suffixes x)
 
+-- |Builds an equivalences array.
+buildEquivalences :: (Eq a) => [([a], [a])] -> [Equivalence a]
+buildEquivalences xs = foldl addEquivalence [] xs
+        where addEquivalence acc ([], _) = acc
+              addEquivalence acc (_, []) = acc
+              addEquivalence acc (x, x') = case x <-> x' of
+                                           Nothing -> acc
+                                           Just e -> e : acc
+        
 {- |
    The define equivalence (<->) function builds an Equivalence data.
    
