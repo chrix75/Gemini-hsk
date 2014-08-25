@@ -16,11 +16,12 @@ category:       Text
 copyright:      (c) Christian Sperandio, 2014
 license:        BSD3
 license-file:   LICENSE
+homepage:       https://github.com/chrix75/Gemini-hsk
 
 library
   hs-source-dirs:  src
   build-depends:   
                    base >=4 && <5,
                    containers >=0.5.0 && <0.6
-  ghc-options:     -Wall -o2
+  ghc-options:     -Wall -O2
 
