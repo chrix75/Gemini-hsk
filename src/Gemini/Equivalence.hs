@@ -98,7 +98,7 @@ selectEquivalence Nothing a = a
 selectEquivalence a _ = a
 
 validateSearch :: (Eq a) => Equivalence a -> Cursor a -> Maybe (Equivalence a)
-validateSearch e@(Equivalence (a,b) _ _) (Cursor _ (f,f')) = if validCursor
+validateSearch e@(Equivalence (a,b) _ _) (Cursor _ (f,f')) = if length f > 0 && length f' > 0 && validCursor
                                                                then Just $ orderEquivalence (c,d) e
                                                                else Nothing
     where (c,d) = (head f, head f')
