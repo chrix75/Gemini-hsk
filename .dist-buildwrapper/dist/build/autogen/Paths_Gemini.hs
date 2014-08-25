@@ -14,13 +14,13 @@ catchIO = Exception.catch
 
 
 version :: Version
-version = Version {versionBranch = [0,1], versionTags = []}
+version = Version {versionBranch = [0,2], versionTags = []}
 bindir, libdir, datadir, libexecdir :: FilePath
 
-bindir     = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.1/bin"
-libdir     = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.1/lib"
-datadir    = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.1/share"
-libexecdir = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.1/libexec"
+bindir     = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.2/bin"
+libdir     = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.2/lib"
+datadir    = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.2/share"
+libexecdir = "/Users/batman/Library/Haskell/ghc-7.6.3/lib/Gemini-0.2/libexec"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir :: IO FilePath
 getBinDir = catchIO (getEnv "Gemini_bindir") (\_ -> return bindir)

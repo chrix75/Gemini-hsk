@@ -1,5 +1,5 @@
 name:           Gemini
-version:        0.1
+version:        0.2
 cabal-version:  >= 1.2
 build-type:     Simple
 author:         Christian Sperandio
@@ -16,11 +16,18 @@ category:       Text
 copyright:      (c) Christian Sperandio, 2014
 license:        BSD3
 license-file:   LICENSE
+homepage:       https://github.com/chrix75/Gemini-hsk
 
 library
   hs-source-dirs:  src
   build-depends:   
                    base >=4 && <5,
                    containers >=0.5.0 && <0.6
-  ghc-options:     -Wall -o2
+  ghc-options:     -Wall -O2
+  exposed-modules: Gemini.Expression
+  other-modules:   
+                   Gemini.Comparison,
+                   Gemini.Equivalence,
+                   Gemini.SimpleComparison,
+                   Gemini.Types
 
