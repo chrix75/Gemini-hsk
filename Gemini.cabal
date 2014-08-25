@@ -1,0 +1,26 @@
+name:           Gemini
+version:        0.1
+cabal-version:  >= 1.2
+build-type:     Simple
+author:         Christian Sperandio
+maintainer:     christian.sperandio@gmail.com
+synopsis:       Functions to find the likeness bertween expression.
+description:    
+                The Gemini package provide functions to find the likeness of 2 expressions.
+                The likeness is provided with a score value is between 0 and 1.  The 1 value means the 2 expressions are the same
+                and 0 means they're different.
+                .
+                Even if the expressions are often strings, it's not mandatory. An expression is any list of items which implement the
+                Eq and Ord classes.
+category:       Text
+copyright:      (c) Christian Sperandio, 2014
+license:        BSD3
+license-file:   LICENSE
+
+library
+  hs-source-dirs:  src
+  build-depends:   
+                   base >=4 && <5,
+                   containers >=0.5.0 && <0.6
+  ghc-options:     -Wall -o2
+

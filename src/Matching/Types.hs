@@ -1,0 +1,31 @@
+{-|
+Module      : Matching.Types
+Description : Data types used by other Matching modules.
+Copyright   : (c) Christian Sperandio, 2014
+License     : 4-clause BSD license (with advertising clause)
+Maintainer  : christian.sperandio@gmail.com
+-}
+module Matching.Types where
+
+
+{-|
+  The Cursor data is used by the comparison functions. A cursor walks along the
+  compared words.
+  
+  For example, if the cursor is at the first L of the word "HELLO", we have
+  previous = "HE" and followers = "LLO".  
+-}
+data Cursor a
+        = Cursor {
+                 previous :: ([a], [a]),
+                 followers :: ([a], [a])
+                 } deriving (Show)
+                       
+-- | Represents an equivalence of two writings.
+data Equivalence a 
+        = Equivalence { 
+                      breaker :: (a, a),
+                      prefix :: [a],
+                      suffixes :: ([a], [a])
+                      } deriving (Show)
+                       
