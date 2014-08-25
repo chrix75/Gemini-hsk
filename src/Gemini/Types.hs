@@ -5,7 +5,7 @@ Copyright   : (c) Christian Sperandio, 2014
 License     : 4-clause BSD license (with advertising clause)
 Maintainer  : christian.sperandio@gmail.com
 -}
-module Matching.Types where
+module Gemini.Types where
 
 
 {-|

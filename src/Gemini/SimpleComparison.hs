@@ -8,10 +8,10 @@ Maintainer  : christian.sperandio@gmail.com
 The functions in this module are the used functions by the module Comparison.
 
 -}
-module Matching.SimpleComparison where
+module Gemini.SimpleComparison where
 
-import Matching.Types (Cursor(..), Equivalence(..))
-import Matching.Equivalence (findEquivalence)
+import Gemini.Types (Cursor(..), Equivalence(..))
+import Gemini.Equivalence (findEquivalence)
 
 -- |Cursor an invertion between 2 lists at the cursor
 findInvertion :: (Eq a) => Cursor a -> Maybe (Cursor a)

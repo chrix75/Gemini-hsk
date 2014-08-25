@@ -14,9 +14,9 @@ In the documentation below, you'll find reference to Cursor data. Take a look at
 for more details.
 
 -}
-module Matching.Equivalence where
+module Gemini.Equivalence where
 
-import Matching.Types (Cursor(..), Equivalence(..))
+import Gemini.Types (Cursor(..), Equivalence(..))
 
                        
 {-|

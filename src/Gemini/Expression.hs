@@ -17,12 +17,11 @@ In the function description, the term 'word' defines [a].
 
 This module was written to compare fields to find duplicate information.
 -}
-module Matching.Expression (likeness) where
+module Gemini.Expression (likeness) where
 
--- TODO define explicit exports
-import qualified Matching.Comparison as C
+import qualified Gemini.Comparison as C
 import qualified Data.Map as M
-import Matching.Types (Equivalence(..))
+import Gemini.Types (Equivalence(..))
 
 data Expr a = Expr [[a]]
 

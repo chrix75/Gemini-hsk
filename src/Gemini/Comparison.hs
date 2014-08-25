@@ -25,10 +25,10 @@ We define all transformation as error except the Similarity one. That explains w
 the result of TCHO and CHO gives those words are the same.
  
 -}
-module Matching.Comparison where
+module Gemini.Comparison where
 
-import Matching.Types (Cursor(..), Equivalence)
-import qualified Matching.SimpleComparison as C
+import Gemini.Types (Cursor(..), Equivalence)
+import qualified Gemini.SimpleComparison as C
 
 -- |Defines all managed errors.
 data Error a = Invertion { rest :: Cursor a }
