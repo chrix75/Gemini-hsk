@@ -1,4 +1,1 @@
-.dist-buildwrapper/dist/package.conf.inplace
-.dist-buildwrapper/dist/setup-config
-.dist-buildwrapper/dist/setup/setup.hs
-.dist-buildwrapper/dist/setup/setup.version
+/.dist-buildwrapper

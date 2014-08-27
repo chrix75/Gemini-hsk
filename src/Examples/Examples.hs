@@ -80,7 +80,7 @@ compare6d = Ex.likeness ["sa", "corp", "of", "the"] eqvs e1 e2
               e1 = Ex.Expr $ words "the schumea adventure corp sa"
               e2 = Ex.Expr $ words "schumee adventure"
               
--- |This function returns 0.10267857142857145 
+-- |This function returns 0.10267857142857145 (because of software and schumee)
 compare7 :: Double
 compare7 = Ex.likeness ["sa", "corp", "corporate", "of", "the"] eqvs e1 e2
         where eqvs = Eq.buildEquivalences [("sch", "sh"), ("ea", "ee")]

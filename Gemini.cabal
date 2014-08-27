@@ -1,6 +1,6 @@
 name:           Gemini
 version:        0.2
-cabal-version:  >= 1.2
+cabal-version:  >= 1.18
 build-type:     Simple
 author:         Christian Sperandio
 maintainer:     christian.sperandio@gmail.com
@@ -23,12 +23,13 @@ library
   build-depends:   
                    base >=4 && <5,
                    containers >=0.5.0 && <0.6
-  ghc-options:     -Wall -O2
+  ghc-options:     -Wall
   exposed-modules: 
                    Gemini.Equivalence,
                    Gemini.Expression
   other-modules:   
                    Gemini.Comparison,
                    Gemini.SimpleComparison,
-                   Gemini.Types
+                   Gemini.Types,
+                   Examples.Examples
 
