@@ -82,7 +82,7 @@ compareExpressions :: (Eq a) => [[a]] -> [Equivalence a ] -> Expr a -> Expr a ->
 compareExpressions weaks eqvs (Expr x) (Expr y) = map cmp $ filter (\(t, t') -> t `notElem` weaks && t' `notElem` weaks) $ allComparisons x y
         where cmp (t, t') = Result { terms = (t, t'), mark = C.likeness eqvs t t' }
 
--- | Remove the weak words from the comparisons todo list.
+-- | Remove the weak words from the comparisons list.
 removeWeakWords :: (Eq a) => [([a], [a])] -> [[a]] -> [([a], [a])]
 removeWeakWords rs ws = foldl remove [] rs
         where remove acc r@(t, t') = if t `elem` ws || t' `elem` ws
