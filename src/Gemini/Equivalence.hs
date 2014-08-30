@@ -90,7 +90,7 @@ startsWith :: (Eq a) => [a] -> [a] -> Bool
 startsWith _ [] = True
 startsWith [] _ = False
 startsWith a@(x:xs) h@(y:ys) | length h > length a = False
-                             | otherwise = if x == y then startsWith xs ys else False
+                             | otherwise = (x == y) && startsWith xs ys
                                  
 
 selectEquivalence :: Maybe (Equivalence a) -> Maybe (Equivalence a) -> Maybe (Equivalence a)

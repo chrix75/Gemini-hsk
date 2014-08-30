@@ -47,7 +47,7 @@ likeness eqvs a b = likenessFromErrors $ findAllErrors eqvs s
 -- |Compute the likeness score from the found errors while the comparison.
 likenessFromErrors :: [Error a] -> Double
 likenessFromErrors xs = if l > 0 then 1 - errors / l else 0
-        where errors = (fromIntegral . length) $ filter (selectError) xs
+        where errors = fromIntegral . length $ filter selectError xs
               l = fromIntegral $ length xs
               selectError x = case x of
                               None _ -> False
@@ -69,7 +69,7 @@ searchError eqvs s = searchSimilarityError eqvs s
                      >>> searchSubstitutionError s
 
 (>>>) :: Error a -> Error a -> Error a
-a >>> b  = if (rest a) >? (rest b) then b else a
+a >>> b  = if rest a >? rest b then b else a
         where x >? y = let (x1, x2) = followers x
                            (y1, y2) = followers y
                        in length x1 + length x2 > length y1 + length y2

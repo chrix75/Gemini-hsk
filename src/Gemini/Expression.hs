@@ -62,8 +62,8 @@ likeness weaks eqvs a b = (computeAverage e1 + computeAverage e2) / 2
         where e1 = buildBestTree r1
               e2 = buildBestTree r2
               res = compareExpressions weaks eqvs a b
-              r1 = resultToMarksList res (fst)
-              r2 = resultToMarksList res (snd)
+              r1 = resultToMarksList res fst
+              r2 = resultToMarksList res snd
               
 -- |The allComparaisons functions returns all possible comparaisons for 2 lists of words.              
 allComparisons :: [[a]]-> [[a]] -> [([a], [a])]
