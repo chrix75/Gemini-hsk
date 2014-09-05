@@ -79,8 +79,11 @@ allComparisons a b = dispatch a b b
   This function returns a list of Result data. 
 -}
 compareExpressions :: (Eq a) => [[a]] -> [Equivalence a ] -> Expr a -> Expr a -> [Result a]
-compareExpressions weaks eqvs (Expr x) (Expr y) = map cmp $ filter (\(t, t') -> t `notElem` weaks && t' `notElem` weaks) $ allComparisons x y
+compareExpressions weaks eqvs (Expr x) (Expr y) = map cmp $ exprs
         where cmp (t, t') = Result { terms = (t, t'), mark = C.likeness eqvs t t' }
+              allCmps = allComparisons x y
+              filtred = filter (\(t, t') -> t `notElem` weaks && t' `notElem` weaks) allCmps
+              exprs = if null filtred then allCmps else filtred 
 
 -- | Remove the weak words from the comparisons list.
 removeWeakWords :: (Eq a) => [([a], [a])] -> [[a]] -> [([a], [a])]
