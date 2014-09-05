@@ -14,9 +14,18 @@ In the documentation below, you'll find reference to Cursor data. Take a look at
 for more details.
 
 -}
-module Gemini.Equivalence (findEquivalence, (<->), buildEquivalences) where
+module Gemini.Equivalence (findEquivalence, (<->), buildEquivalences, Equivalence(..)) where
 
-import Gemini.Types (Cursor(..), Equivalence(..))
+import Gemini.Types (Cursor(..))
+
+-- | Represents an equivalence of two writings.
+data Equivalence a 
+        = Equivalence { 
+                      breaker :: (a, a),
+                      prefix :: [a],
+                      suffixes :: ([a], [a])
+                      } deriving (Show)
+
 
                        
 {-|

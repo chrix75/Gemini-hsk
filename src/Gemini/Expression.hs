@@ -21,7 +21,7 @@ module Gemini.Expression (likeness, Expr(..)) where
 
 import qualified Gemini.Comparison as C
 import qualified Data.Map as M
-import Gemini.Types (Equivalence(..))
+import Gemini.Equivalence (Equivalence(..))
 
 data Expr a = Expr [[a]]
 

@@ -20,11 +20,4 @@ data Cursor a
                  followers :: ([a], [a])
                  } deriving (Show)
                        
--- | Represents an equivalence of two writings.
-data Equivalence a 
-        = Equivalence { 
-                      breaker :: (a, a),
-                      prefix :: [a],
-                      suffixes :: ([a], [a])
-                      } deriving (Show)
                        

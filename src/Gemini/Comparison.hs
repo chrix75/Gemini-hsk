@@ -27,7 +27,8 @@ the result of TCHO and CHO gives those words are the same.
 -}
 module Gemini.Comparison where
 
-import Gemini.Types (Cursor(..), Equivalence)
+import Gemini.Types (Cursor(..))
+import Gemini.Equivalence (Equivalence(..))
 import qualified Gemini.SimpleComparison as C
 
 -- |Defines all managed errors.
