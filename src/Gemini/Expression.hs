@@ -65,13 +65,6 @@ likeness weaks eqvs a b = (computeAverage e1 + computeAverage e2) / 2
               r1 = resultToMarksList res fst
               r2 = resultToMarksList res snd
               
--- |The allComparaisons functions returns all possible comparaisons for 2 lists of words.              
-allComparisons :: [[a]]-> [[a]] -> [([a], [a])]
-allComparisons a b = dispatch a b b
-        where dispatch (_:xs) [] b = dispatch xs b b
-              dispatch [] _ _ = [] 
-              dispatch a@(x:_) (y:ys) b = (x, y) : dispatch a ys b
-
 {-|
   The compareExpressions function compares the expressions words each other (except the weak words).
   The arguments of this function are the same as the likeness function.
@@ -79,9 +72,9 @@ allComparisons a b = dispatch a b b
   This function returns a list of Result data. 
 -}
 compareExpressions :: (Eq a) => [[a]] -> [Equivalence a ] -> Expr a -> Expr a -> [Result a]
-compareExpressions weaks eqvs (Expr x) (Expr y) = map cmp $ filtred
+compareExpressions weaks eqvs (Expr xs) (Expr ys) = map cmp filtred
         where cmp (t, t') = Result { terms = (t, t'), mark = C.likeness eqvs t t' }
-              allCmps = allComparisons x y
+              allCmps = [ (x, y) | x <- xs, y <- ys ]
               filtred = removeWeakWords allCmps weaks
 
 -- | Remove the weak words from the comparisons list.

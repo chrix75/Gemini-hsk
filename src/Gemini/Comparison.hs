@@ -45,7 +45,8 @@ likeness :: (Eq a) => [Equivalence a] -> [a] -> [a] -> Double
 likeness eqvs a b = if r < threshold then 0 else r
         where s = Cursor ([], []) (a, b)
               r = likenessFromErrors $ findAllErrors eqvs s
-              threshold = 0.8
+              threshold = 0.5
+              
 
 -- |Compute the likeness score from the found errors while the comparison.
 likenessFromErrors :: [Error a] -> Double
