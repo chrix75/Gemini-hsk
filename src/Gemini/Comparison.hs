@@ -42,8 +42,10 @@ data Error a = Invertion { rest :: Cursor a }
 
 -- |Compute the likeness score of 2 words.
 likeness :: (Eq a) => [Equivalence a] -> [a] -> [a] -> Double
-likeness eqvs a b = likenessFromErrors $ findAllErrors eqvs s
+likeness eqvs a b = if r < threshold then 0 else r
         where s = Cursor ([], []) (a, b)
+              r = likenessFromErrors $ findAllErrors eqvs s
+              threshold = 0.8
 
 -- |Compute the likeness score from the found errors while the comparison.
 likenessFromErrors :: [Error a] -> Double
