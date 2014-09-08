@@ -79,18 +79,14 @@ allComparisons a b = dispatch a b b
   This function returns a list of Result data. 
 -}
 compareExpressions :: (Eq a) => [[a]] -> [Equivalence a ] -> Expr a -> Expr a -> [Result a]
-compareExpressions weaks eqvs (Expr x) (Expr y) = map cmp $ exprs
+compareExpressions weaks eqvs (Expr x) (Expr y) = map cmp $ filtred
         where cmp (t, t') = Result { terms = (t, t'), mark = C.likeness eqvs t t' }
               allCmps = allComparisons x y
-              filtred = filter (\(t, t') -> t `notElem` weaks && t' `notElem` weaks) allCmps
-              exprs = if null filtred then allCmps else filtred 
+              filtred = removeWeakWords allCmps weaks
 
 -- | Remove the weak words from the comparisons list.
 removeWeakWords :: (Eq a) => [([a], [a])] -> [[a]] -> [([a], [a])]
-removeWeakWords rs ws = foldl remove [] rs
-        where remove acc r@(t, t') = if t `elem` ws || t' `elem` ws
-                                     then acc
-                                     else acc ++ [r]
+removeWeakWords rs ws = filter (\(t, t') -> t `notElem` ws && t' `notElem` ws) rs
 
 -- | Converts a list of Result data to a list will be used to build a tree to compute the final score.        
 resultToMarksList :: [Result a] -> (([a], [a]) -> [a]) -> [([a], Double)]
