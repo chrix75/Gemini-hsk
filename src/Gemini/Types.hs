@@ -2,7 +2,7 @@
 Module      : Matching.Types
 Description : Data types used by other Matching modules.
 Copyright   : (c) Christian Sperandio, 2014
-License     : 4-clause BSD license (with advertising clause)
+License     : Apache License, version 2.0
 Maintainer  : christian.sperandio@gmail.com
 -}
 module Gemini.Types where

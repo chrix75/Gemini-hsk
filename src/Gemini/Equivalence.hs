@@ -2,7 +2,7 @@
 Module      : Matching.Equivalence
 Description : Manages the equivalence of writings in words.
 Copyright   : (c) Christian Sperandio, 2014
-License     : 4-clause BSD license (with advertising clause)
+License     : Apache License, version 2.0
 Maintainer  : christian.sperandio@gmail.com
 
 The module Matching.Equivalence defines functions to set equivalences and find them in words 
@@ -107,7 +107,7 @@ selectEquivalence Nothing a = a
 selectEquivalence a _ = a
 
 validateSearch :: (Eq a) => Equivalence a -> Cursor a -> Maybe (Equivalence a)
-validateSearch e@(Equivalence (a,b) _ _) (Cursor _ (f,f')) = if length f > 0 && length f' > 0 && validCursor
+validateSearch e@(Equivalence (a,b) _ _) (Cursor _ (f,f')) = if (not . null) f  && (not . null) f' && validCursor
                                                                then Just $ orderEquivalence (c,d) e
                                                                else Nothing
     where (c,d) = (head f, head f')

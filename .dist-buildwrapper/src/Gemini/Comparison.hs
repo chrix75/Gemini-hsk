@@ -2,7 +2,7 @@
 Module      : Matching.Comparison
 Description : Defines functions to compare words.
 Copyright   : (c) Christian Sperandio, 2014
-License     : 4-clause BSD license (with advertising clause)
+License     : Apache License, version 2.0
 Maintainer  : christian.sperandio@gmail.com
 
 The Comparison module provide main functions which compare 2 words.

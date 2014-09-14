@@ -2,7 +2,7 @@
 Module      : Matching.SimpleComparison
 Description : Defines functions to compare words at a cursor position.
 Copyright   : (c) Christian Sperandio, 2014
-License     : MIT
+License     : Apache License, version 2.0
 Maintainer  : christian.sperandio@gmail.com
 
 The functions in this module are the used functions by the module Comparison.

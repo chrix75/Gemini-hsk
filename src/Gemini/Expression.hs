@@ -2,7 +2,7 @@
 Module      : Matching.Expression
 Description : Searches the likeness between 2 expressions.
 Copyright   : (c) Christian Sperandio, 2014
-License     : 4-clause BSD license (with advertising clause)
+License     : Apache License, version 2.0
 Maintainer  : christian.sperandio@gmail.com
 
 This module compares 2 expressions to provide a likeness score. 
